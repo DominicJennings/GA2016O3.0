@@ -11,12 +11,6 @@
 	<theme id="politics2" name="White Houserz" thumb="" />
 	<theme id="chibi" name="Chibi Peepz" thumb="" cc_theme_id="chibi" />
 	<theme id="spacecitizen" name="Space Citizens" thumb="" cc_theme_id="spacecitizen" />
-        <--theme id="business" name="Business Friendly" thumb="" cc_theme_id="business" /--!>
-        <theme id="whiteboard" name="Whiteboard Animation" thumb="" cc_theme_id="whiteboard" />
-        <theme id="infographics" name="Video Infographics" thumb="" cc_theme_id="infographics" />
-        <theme id="sticklybiz" name="Stickly Business" thumb="" cc_theme_id="sticklybiz" />
-        <theme id="bizmodels" name="Business Models" thumb="" cc_theme_id="bizmodels" />
-        <theme id="commoncraft" name="Common Craft" thumb="" cc_theme_id="commoncraft" />
 	<whiteword />
 	<excludeAssetIDs />
 	<points money="0" sharing="0" />
