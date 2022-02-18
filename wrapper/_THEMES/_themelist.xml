@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list version="1.0">
-	<fvm_meta theme_code="" is_biz="0" />
 	<theme id="custom" name="Comedy World" thumb="" cc_theme_id="custom" />
         <theme id="yugandar" name="Yugandar's World 2.0" thumb="" cc_theme_id="yugandar" />
 	<theme id="import" name="Imported Assets" thumb="" />
@@ -12,29 +11,7 @@
 	<theme id="ninjaanime" name="Ninja Anime" thumb="" cc_theme_id="ninjaanime" />
 	<theme id="spacecitizen" name="Space Citizens" thumb="" cc_theme_id="spacecitizen" />
 	<theme id="chibi" name="Chibi Peepz" thumb="" cc_theme_id="chibi" />
-	<theme id="ninja" name="Chibi Ninjas" thumb="" cc_theme_id="ninja" />
 	<theme id="space" name="Space Peepz" thumb="" cc_theme_id="space" />
 	<theme id="stick" name="Stick Figure" thumb="" cc_theme_id="stick" />
-	<theme id="animal" name="Lil' Petz" thumb="" cc_theme_id="animal" />
 	<theme id="common" name="Common" thumb="matchboy-stand.swf" cc_theme_id="common" />
-	<!--<theme id="toonadv" name="Toon Adventure" enable="N" />
-	<theme id="underdog" name="Saturday Morning TV" enable="N" />
-	<theme id="willie" name="Willie Nelson" enable="N" />
-	<theme id="fullenergy" name="Full Energy" thumb=""/>
-	<theme id="akon" name="AKON" />
-	<theme id="ben10" name="Ben 10" />
-	<theme id="botdf" name="Blood on the Dance Floor" cc_theme_id="botdf" />
-	<theme id="bunny" name="It's Happy Bunny" enable="N" />
-	<theme id="chowder" name="Chowder" enable="N" />
-	<theme id="domo" name="Domo" enable="N" />
-	<theme id="monkeytalk" name="SuperRica &amp; Rashy" enable="N" />
-	<theme id="christmas" name="Holiday &amp; Seasonal" thumb="santa-stand.swf" />
-	<theme id="bizmodels" name="Business Models" thumb="" />
-	<theme id="sticklybiz" name="Stickly Business" thumb="" />
-	<theme id="vietnam" name="Jungle Warfare" thumb="" />
-	<theme id="monstermsh" name="Monsters Mayhem" thumb="" />-->
-	<word></word>
-	<whiteword />
-	<excludeAssetIDs />
-	<points money="0" sharing="0" />
 </list>
