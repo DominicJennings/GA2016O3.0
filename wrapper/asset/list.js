@@ -1,3 +1,4 @@
+// All rights and credits goes to David's TV Studio for helping me revive the starters feature.
 const loadPost = require("../misc/post_body");
 const header = process.env.XML_HEADER;
 const fUtil = require("../misc/file");
