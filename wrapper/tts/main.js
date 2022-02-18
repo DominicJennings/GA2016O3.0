@@ -522,11 +522,35 @@ module.exports = (voiceName, text) => {
 				break;
 			}
 			case "import": {
-				https.get(
+				var q = qs.encode({
+					voice: voice.arg,
+					msg: text,
+				});
+				http.get(
 					{
 						host: "localhost",
-						port: "4664",
-						path: `/vo/rewriteable.mp3`,
+						port: "4334",
+						path: `/rewriteable1.mp3`,
+					},
+					(r) => {
+						var buffers = [];
+						r.on("data", (d) => buffers.push(d));
+						r.on("end", () => res(Buffer.concat(buffers)));
+						r.on("error", rej);
+					}
+				);
+				break;
+			}
+			case "import2": {
+				var q = qs.encode({
+					voice: voice.arg,
+					msg: text,
+				});
+				http.get(
+					{
+						host: "localhost",
+						port: "4334",
+						path: `/rewriteable2.mp3`,
 					},
 					(r) => {
 						var buffers = [];
