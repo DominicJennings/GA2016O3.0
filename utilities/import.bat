@@ -159,15 +159,18 @@ for %%a in (import_these\*) do (
 	if !cftype!=="sound" (
 		echo Press 1 to import !cfname! as music.
 		echo Press 2 to import !cfname! as a sound effect.
+		echo Press 3 to import !cfname! as a voiceover.
 		:soundaskretry
 		set /p SOUNDCHOICE= Response:
 		echo:
 		if "!soundchoice!"=="0" goto end
 		if "!soundchoice!"=="1" set CFSUBTYPE="bgmusic"
 		if "!soundchoice!"=="2" set CFSUBTYPE="soundeffect"
+		if "!soundchoice!"=="2" set CFSUBTYPE="voiceover"
 		if "!CFSUBTYPE!"=="" echo You must answer what type of sound it is. && goto soundaskretry
 		echo:
 	)
+	if !cfsubtype!=="voiceover" goto voice
 
 	:: Additional attributes
 	if !cfsubtype!=="prop" (
@@ -309,7 +312,7 @@ echo Zipping XML...
 	if !VOICESLOT!=="1" (
 	ren "!cfid!" "rewriteable.mp3"
 	if not exist vo ( md vo )
-	move /y "rewriteable.mp3" ..\server\vo\"rewriteable.mp3" >nul
+	move /y "rewriteable.mp3" ..\..\server\vo\"rewriteable.mp3" >nul
 	echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
 	echo To change the voice clip, run this importer again.
 	goto end
