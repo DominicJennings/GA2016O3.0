@@ -525,8 +525,8 @@ module.exports = (voiceName, text) => {
 				https.get(
 					{
 						host: "localhost",
-						port: "4664",
-						path: `/vo/rewriteable.mp3`,
+						port: "4334",
+						path: `/rewriteable.mp3`,
 					},
 					(r) => {
 						var buffers = [];
