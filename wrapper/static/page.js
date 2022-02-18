@@ -146,7 +146,7 @@ module.exports = function (req, res, url) {
 	
 	<header id="header">
 		<a href="/">
-			<h1 style="margin:0"><img id="logo" src="https://cdn.discordapp.com/attachments/901180708255563818/932633381018140732/goanimate.png" alt="GoAnimate"/></h1>
+			<h1 style="margin:0"><img id="logo" src="/pages/img/goanimate.png" alt="GoAnimate"/></h1>
 		</a>
 	</header>
 	
