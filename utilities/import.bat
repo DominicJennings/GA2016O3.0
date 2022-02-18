@@ -295,19 +295,21 @@ echo Zipping XML...
 	if !cftype!=="voice" (
 		echo Press 1 to import !cfname! into Slot 1.
 		echo Press 2 to import !cfname! into Slot 2.
+		echo Press 3 to import !cfname! into Slot 3.
 		:voiceslotaskretry
 		set /p VOICESLOTCHOICE= Response:
 		echo:
 		if "!voiceslotchoice!"=="0" goto end
 		if "!voiceslotchoice!"=="1" set VOICESLOT="1"
 		if "!voiceslotchoice!"=="2" set VOICESLOT="2"
+		if "!voiceslotchoice!"=="3" set VOICESLOT="3"
 		if "!VOICESLOT!"=="" echo You must select a voice slot. && goto voiceslotaskretry
 		echo:
 	)
 	if !VOICESLOT!=="1" (
-	ren "!cfid!" "rewriteable1.mp3"
-	if not exist voice ( md voice )
-	move /y "rewriteable1.mp3" voice\"rewriteable1.mp3" >nul
+	ren "!cfid!" "rewriteable.mp3"
+	if not exist vo ( md vo )
+	move /y "rewriteable.mp3" ..\server\vo\"rewriteable.mp3" >nul
 	echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
 	echo To change the voice clip, run this importer again.
 	goto end
@@ -317,6 +319,14 @@ echo Zipping XML...
 	if not exist voice ( md voice )
 	move /y "rewriteable2.mp3" voice\"rewriteable2.mp3" >nul
 	echo To import the voice clip, type anything into the Import 2 text-to-speech voice.
+	echo To change the voice clip, run this importer again.
+	goto end
+)
+	if !VOICESLOT!=="3" (
+	ren "!cfid!" "rewriteable3.mp3"
+	if not exist voice ( md voice )
+	move /y "rewriteable3.mp3" voice\"rewriteable3.mp3" >nul
+	echo To import the voice clip, type anything into the Import 3 text-to-speech voice.
 	echo To change the voice clip, run this importer again.
 	goto end
 )
