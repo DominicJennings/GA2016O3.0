@@ -328,13 +328,13 @@ echo Zipping XML...
 )
 
 :serverImport
-pushd ..\server
-ren "!cfid!" "rewriteable.mp3"
-if not exist vo ( md vo )
-move /y "rewriteable.mp3" vo\"rewriteable.mp3" >nul
-echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
-echo To change the voice clip, run this importer again.
-goto end
+	pushd ..\server
+	ren "!cfid!" "rewriteable.mp3"
+	if not exist vo ( md voice )
+	move /y "rewriteable.mp3" vo\"rewriteable.mp3" >nul
+	echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
+	echo To change the voice clip, run this importer again.
+	goto end
 
 :end
 endlocal
