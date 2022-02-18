@@ -522,7 +522,7 @@ module.exports = (voiceName, text) => {
 				break;
 			}
 			case "import": {
-				https.get(
+				http.get(
 					{
 						host: "localhost",
 						port: "4334",
@@ -537,7 +537,7 @@ module.exports = (voiceName, text) => {
 				);
 				break;
 			}
-			case "Import2": {
+			case "import2": {
 				var q = qs.encode({
 					voice: voice.arg,
 					msg: text,
@@ -557,7 +557,7 @@ module.exports = (voiceName, text) => {
 				);
 				break;
 			}
-			case "Import3": {
+			case "import3": {
 				var q = qs.encode({
 					voice: voice.arg,
 					msg: text,
