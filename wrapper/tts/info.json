@@ -4817,19 +4817,27 @@
 			"source": "polly",
 			"arg": "Emma"
 		},
-		"Import2": {
+		"import": {
 			"country": "",
 			"language": "any",
 			"gender": "M",
 			"source": "import",
 			"arg": "import",
-			"desc": "Import Slot 2"
+			"desc": "Import Slot 1"
 		},
-		"Import3": {
+		"import2": {
 			"country": "",
 			"language": "any",
-			"gender": "F",
+			"gender": "M",
 			"source": "import2",
+			"arg": "import",
+			"desc": "Import Slot 2"
+		},
+		"import3": {
+			"country": "",
+			"language": "any",
+			"gender": "M",
+			"source": "import3",
 			"arg": "import",
 			"desc": "Import Slot 3"
 		}
