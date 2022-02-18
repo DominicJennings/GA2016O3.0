@@ -1038,6 +1038,11 @@ if !VERBOSEWRAPPER!==y (
 	if !DRYRUN!==n ( TASKKILL /IM node.exe /F 2>nul )
 	if !DRYRUN!==n ( TASKKILL /IM php.exe /F 2>nul )
 )
+if !SHOWINTERACTIVETUTORIALONCE!==y (
+pushd wrapper\pages\html
+ren list.html list-tutorial.html
+ren list-notutorial.html list.html
+)
 
 :: This is where I get off.
 echo Wrapper: Offline has been shut down.
