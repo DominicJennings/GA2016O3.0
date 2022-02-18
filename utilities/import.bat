@@ -309,15 +309,7 @@ echo Zipping XML...
 		if "!VOICESLOT!"=="" echo You must select a voice slot. && goto voiceslotaskretry
 		echo:
 	)
-	if !VOICESLOT!=="1" (
-	pushd ..\server
-	ren "!cfid!" "rewriteable.mp3"
-	if not exist vo ( md vo )
-	move /y "rewriteable.mp3" vo\"rewriteable.mp3" >nul
-	echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
-	echo To change the voice clip, run this importer again.
-	goto end
-)
+	if !VOICESLOT!=="1" goto serverImport
 	if !VOICESLOT!=="2" (
 	ren "!cfid!" "rewriteable2.mp3"
 	if not exist voice ( md voice )
@@ -334,7 +326,15 @@ echo Zipping XML...
 	echo To change the voice clip, run this importer again.
 	goto end
 )
-	
+
+:serverImport
+ren "!cfid!" "rewriteable.mp3"
+if not exist vo ( md vo )
+move /y "rewriteable.mp3" ..\..\server\vo\"rewriteable.mp3" >nul
+echo To import the voice clip, type anything into the Import 1 text-to-speech voice.
+echo To change the voice clip, run this importer again.
+goto end
+
 :end
 endlocal
 if "%SUBSCRIPT%"=="" (
