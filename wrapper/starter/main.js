@@ -1,4 +1,4 @@
-// All rights and credits goes to David's TV Studio for helping us with the Your Library import feature.
+// All rights and credits goes to David's TV Studio for the starter feature.
 const exFolder = process.env.EXAMPLE_FOLDER;
 const caché = require("../asset/caché");
 const fUtil = require("../misc/file");
