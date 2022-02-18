@@ -13,3 +13,23 @@ https://www.youtube.com/watch?v=bOtOMWdRTac
 
 
 The Final Version of Yugandar's world will be included also automatically!
+
+
+two business themes pack repository soon so yeah...
+
+Again.. There Won't Be The Business Themes That Vyond Used...
+
+There Will Be *Stickly Business* And *Business Models* Also!
+
+
+i will be making a youtube video on how to do it
+
+It Will Consist Of 
+
+
+
+
+*Stickly Business*
+And *Business Models*
+So Yeah...
+On The *Wrapper:Offline / GoAnimate 2016 Offline*
