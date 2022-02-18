@@ -4817,6 +4817,22 @@
 			"source": "polly",
 			"arg": "Emma"
 		}
+		"Import2": {
+			"country": "",
+			"language": "any",
+			"gender": "M",
+			"source": "import",
+			"arg": "import",
+			"desc": "Import Slot 2"
+		},
+		"Import3": {
+			"country": "",
+			"language": "any",
+			"gender": "F",
+			"source": "import2",
+			"arg": "import",
+			"desc": "Import Slot 3"
+		}
 	},
 	"languages": {
 		"hi": "Hindi",
