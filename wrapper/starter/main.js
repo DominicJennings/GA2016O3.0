@@ -8,9 +8,7 @@ const { timeLog } = require('console');
 module.exports = {
 	/**
 	 *
-	 * @param {Buffer} movieZip
-	 * @param {string} nëwId
-	 * @param {string} oldId
+	 * @param {Buffer} starterZip
 	 * @returns {Promise<string>}
 	 */
 	save(starterZip, thumb) {
@@ -24,7 +22,7 @@ module.exports = {
 			parse.unpackZip(zip, thumb).then(data => {
 				writeStream.write(data, () => {
 					writeStream.close();
-					res("s-" + sId);
+					res('s-' + sId);
 				});
 			});
                 });
@@ -46,34 +44,5 @@ module.exports = {
 			if (movie && thumb) array.push(`m-${c}`);
 		}
 		return array;
-	},
-	async meta(movieId) {
-		if (!movieId.startsWith('s-')) return;
-		const n = Number.parseInt(movieId.substr(2));
-		const fn = fUtil.getFileIndex('starter-', '.xml', n);
-
-		const fd = fs.openSync(fn, 'r');
-		const buffer = Buffer.alloc(256);
-		fs.readSync(fd, buffer, 0, 256, 0);
-		const begTitle = buffer.indexOf('<title>') + 16;
-		const endTitle = buffer.indexOf(']]></title>');
-		const title = buffer.slice(begTitle, endTitle).toString().trim().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-		const begDuration = buffer.indexOf('duration="') + 10;
-		const endDuration = buffer.indexOf('"', begDuration);
-		const duration = Number.parseFloat(
-			buffer.slice(begDuration, endDuration));
-		const min = ('' + ~~(duration / 60)).padStart(2, '0');
-		const sec = ('' + ~~(duration % 60)).padStart(2, '0');
-		const durationStr = `${min}:${sec}`;
-
-		fs.closeSync(fd);
-		return {
-			date: fs.statSync(fn).mtime,
-			durationString: durationStr,
-			duration: duration,
-			title: title,
-			id: movieId,
-		};
 	},
 }
