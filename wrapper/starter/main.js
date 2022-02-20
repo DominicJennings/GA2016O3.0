@@ -1,60 +1,33 @@
-// All rights and credits goes to David's TV Studio for the starter feature.
-const exFolder = process.env.EXAMPLE_FOLDER;
+onst exFolder = process.env.EXAMPLE_FOLDER;
 const caché = require("../asset/caché");
 const fUtil = require("../misc/file");
 const nodezip = require("node-zip");
 const parse = require("../movie/parse");
 const fs = require("fs");
-const truncate = require("truncate");
 
 module.exports = {
 	/**
 	 *
-	 * @param {Buffer} starterZip
+	 * @param {Buffer} movieZip
+	 * @param {string} nëwId
+	 * @param {string} oldId
 	 * @returns {Promise<string>}
 	 */
 	save(starterZip, thumb) {
 		return new Promise(async (res, rej) => {
-			var sId = fUtil.getNextFileId("starter-", ".xml");
 			var zip = nodezip.unzip(starterZip);
-			
-			const thumbFile = fUtil.getFileIndex("starter-", ".png", sId);
-			fs.writeFileSync(thumbFile, thumb);
+                        var sId = fUtil.getNextFileId("starter-", ".xml");
 			var path = fUtil.getFileIndex("starter-", ".xml", sId);
 			var writeStream = fs.createWriteStream(path);
-			var assetBuffers = caché.loadTable(sId);
-			parse.unpackMovie(zip, thumb, assetBuffers).then((data) => {
+			parse.unpackMovie(zip, thumb).then((data) => {
 				writeStream.write(data, () => {
 					writeStream.close();
 					res("s-" + sId);
 				});
 			});
-				
-				
 		});
 	},
-	delete(mId) {
-		return new Promise(async (res, rej) => {
-			var i = mId.indexOf("-");
-			var prefix = mId.substr(0, i);
-			var suffix = mId.substr(i + 1);
-			switch (prefix) {
-				case "s":
-					var moviePath = fUtil.getFileIndex("starter-", ".xml", suffix);
-					var thumbPath = fUtil.getFileIndex("starter-", ".png", suffix);
-					fs.unlinkSync(moviePath);
-					fs.unlinkSync(thumbPath);
-					caché.clearTable(mId);
-					res(mId);
-					break;
-				
-				default:
-					rej();
-			}
-		});
-	},
-	// The cores to load starters is in the main.js file in the movie folder. thanks for reading. -Joseph Animate 2021
-	thumb(movieId) {
+	loadThumb(movieId) {
 		return new Promise(async (res, rej) => {
 			if (!movieId.startsWith("s-")) return;
 			const n = Number.parseInt(movieId.substr(2));
@@ -63,12 +36,13 @@ module.exports = {
 		});
 	},
 	list() {
-		const table = [];
-		var ids = fUtil.getValidFileIndicies("starter-", ".xml");
-		for (const i in ids) {
-			var id = `s-${ids[i]}`;
-			table.unshift({ id: id });
+		const array = [];
+		const last = fUtil.getLastFileIndex("starter-", ".xml");
+		for (let c = last; c >= 0; c--) {
+			const movie = fs.existsSync(fUtil.getFileIndex("starter-", ".xml", c));
+			const thumb = fs.existsSync(fUtil.getFileIndex("starter-", ".png", c));
+			if (movie && thumb) array.push(`m-${c}`);
 		}
-		return table;
+		return array;
 	},
 };
