@@ -1,4 +1,4 @@
-// Core part of Wrapper: Offline
+// Core part of GoAnimate 2016: Offline
 const RPC = require("discord-rpc");
 require("./server");
 
@@ -23,9 +23,9 @@ rpc.on("ready", () => {
 		details: "Version " + version +", build " + build,
 		startTimestamp: new Date(),
 		largeImageKey: "icon",
-		largeImageText: "Wrapper: Offline",
-		smallImageKey: "Wrapper: Offline",
-		smallImagetext: "Wrapper: Offline",
+		largeImageText: "GoAnimate 2016: Offline",
+		smallImageKey: "GoAnimate 2016: Offline",
+		smallImagetext: "GoAnimate 2016: Offline",
 	});
 	// Logs "Rich presence is on!" in the console
 	console.log("Rich presence is on!")
@@ -36,4 +36,3 @@ rpc.login({
 }).catch(
 	console.log('RPC connection failed.')
 );
-
