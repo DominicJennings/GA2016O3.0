@@ -24,7 +24,7 @@ module.exports = function (req, res, url) {
 	var attrs, params, title;
 	switch (url.pathname) {
 		case '/cc': {
-			title = 'Character Creator';
+			title = 'The Character Creator From GoAnimate 2016 Offline - Make Characters Offline For Free!';
 			attrs = {
 				data: process.env.SWF_URL + '/cc.swf', // data: 'cc.swf',
 				type: 'application/x-shockwave-flash', 
@@ -47,7 +47,7 @@ module.exports = function (req, res, url) {
 		}
 		
 		case "/cc_browser": {
-			title = "CC Browser";
+			title = "The CC Browser From GoAnimate 2016 Offline - Copy Or Create Characters Offline For Free!";
 			attrs = {
 				data: process.env.SWF_URL + "/cc_browser.swf", // data: 'cc_browser.swf',
 				type: "application/x-shockwave-flash",
@@ -85,7 +85,7 @@ module.exports = function (req, res, url) {
 		case '/go_full': {
 			let presave = query.movieId && query.movieId.startsWith('m') ? query.movieId :
 				`m-${fUtil[query.noAutosave ? 'getNextFileId' : 'fillNextFileId']('movie-', '.xml')}`;
-			title = 'Video Editor';
+			title = 'The Video Maker From GoAnimate 2016 Offline - Make Your Favorite Animations For Free!';
 			attrs = {
 				data: process.env.SWF_URL + '/go_full.swf',
 				type: 'application/x-shockwave-flash', width: '100%', height: '100%',
@@ -104,7 +104,7 @@ module.exports = function (req, res, url) {
 		}
 
 		case '/player': {
-			title = 'Video Player';
+			title = 'The Video Player From GoAnimate 2016 Offline - Watch Or Record Your Animation!';
 			attrs = {
 				data: process.env.SWF_URL + '/player.swf',
 				type: 'application/x-shockwave-flash', width: '100%', height: '100%',
@@ -148,7 +148,7 @@ module.exports = function (req, res, url) {
 	
 	<header id="header">
 		<a href="/">
-			<h1 style="margin:0"><img id="logo" src="/pages/img/list_logo.svg" alt="Wrapper: Offline"/></h1>
+			<h1 style="margin:0"><img id="logo" src="https://raw.githubusercontent.com/ykranimate2021-ga/GA2016O3.0/bc4de0513bf2fdccebe433d9fd562db894db4cc8/wrapper/pages/img/goanimate.png" alt="Wrapper: Offline"/></h1>
 		</a>
 		<nav id="headbuttons">
 			<div class="dropdown_contain button_small">
