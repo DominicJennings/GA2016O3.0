@@ -1,4 +1,4 @@
-onst exFolder = process.env.EXAMPLE_FOLDER;
+const exFolder = process.env.EXAMPLE_FOLDER;
 const caché = require("../asset/caché");
 const fUtil = require("../misc/file");
 const nodezip = require("node-zip");
