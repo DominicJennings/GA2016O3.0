@@ -1,3 +1,5 @@
+// Special Thanks To David's Tv Studio for helping us fix the code to store starters in the list. i know that you spent hours on that code. but i credited you lol.
+// i typed in the rest. i only needed one code from you witch is storing starters in a list.
 const caché = require('../data/caché');
 const parse = require('../data/parse');
 const fUtil = require('../fileUtil');
@@ -8,7 +10,9 @@ const { timeLog } = require('console');
 module.exports = {
 	/**
 	 *
-	 * @param {Buffer} starterZip
+	 * @param {Buffer} movieZip
+	 * @param {string} nëwId
+	 * @param {string} oldId
 	 * @returns {Promise<string>}
 	 */
 	save(starterZip, thumb) {
@@ -36,13 +40,12 @@ module.exports = {
 		});
 	},
 	list() {
-		const array = [];
-		const last = fUtil.getLastFileIndex('starter-', '.xml');
-		for (let c = last; c >= 0; c--) {
-			const movie = fs.existsSync(fUtil.getFileIndex('starter-', '.xml', c));
-			const thumb = fs.existsSync(fUtil.getFileIndex('starter-', '.png', c));
-			if (movie && thumb) array.push(`m-${c}`);
+		const table = [];
+		var ids = fUtil.getValidFileIndicies('starter-', '.xml');
+		for (const i in ids) {
+			var id = `s-${ids[i]}`;
+			table.unshift({ id: id });
 		}
-		return array;
+		return table;
 	},
 }
